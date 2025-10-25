@@ -1,0 +1,41 @@
+﻿
+
+@model IEnumerable<Receipt>
+
+
+
+<h1 class="mt-4">Pending Tasks For Today <span class="text-primary-orange" >@DateTime.Now.ToString("MM/dd/yyyy")</span></h1>
+<p class="mt-4">Total Receipts: @Model.Count()</p>
+
+<table class="table table-striped my-4">
+    <thead class="bg-dark text-secondary-orange">
+        <tr>
+            <th >#Receipt ID</th>
+            <th >#PO</th>
+            <th >#ASN</th>
+            <th >Vendor Name</th>
+            <th >Receipt Date</th>
+            <th ></th>
+        </tr>
+        </tr>
+       
+    </thead>
+    <tbody>
+    @foreach (var receipt in Model)
+    {
+        <tr>
+            <td>#@receipt.Id</td>
+            <td>#@receipt.POId</td>
+            <td>@receipt.ASNId</td>
+            <td>@receipt.VendorName</td>
+            <td>@receipt.ReceiptDate.ToString("MM/dd/yyyy")</td>
+            <td class="task-process text-end">
+                <a asp-action="GetReceipt" asp-route-id="@receipt.Id" class="p-1 border-radius-0 btn-hero-secondary">Details</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+

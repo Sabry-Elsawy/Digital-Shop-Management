@@ -1,0 +1,138 @@
+﻿@model Receipt 
+<div class="container">
+    <h1 class="mt-4">Processing Receipt <span class="text-primary-orange">#@Model.Id</span></h1>
+
+    <div class="card mb-4 mt-4">
+        <div class="card-header bg-dark opacity-75 text-white">
+            <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Receipt Information</h5>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-lg-3">
+                    <div class="d-flex flex-column">
+                        <small class="text-muted">PO ID</small>
+                        <p class="pt-3"><strong class="text-primary-orange">#@Model.POId</strong></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="d-flex flex-column">
+                        <small class="text-muted">ASN ID</small>
+                        <p class="pt-3"><strong>@(Model.ASNId?.ToString() ?? "N/A")</strong></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="d-flex flex-column">
+                        <small class="text-muted">Vendor Name</small>
+                        <p class="pt-3"><strong>@Model.VendorName</strong></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="d-flex flex-column">
+                        <small class="text-muted">Receipt Date</small>
+                        <p class="pt-3"><strong>@Model.ReceiptDate.ToString("MM/dd/yyyy")</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-striped my-5">
+        <thead>
+            <tr class="bg-dark opacity-75 text-white">
+                <th>Expected Product</th>
+                <th>Remaining</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                var modalId = $"processItemModal_{item.Id}";
+                var formId = $"processForm_{item.Id}";
+                var quantityInputId = $"quantity_{item.Id}";
+                
+                <tr>
+                    <td>
+                        <div class="p-1 mx-3">
+                            <div class="product-details">
+                                <p class="mb-1"><strong>@item.ProductName</strong></p>
+                                <p class="text-muted mb-1">(SKU: @item.SKU)</p>
+                                <p class="text-muted mb-0">Expected: @item.Qty</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="align-middle">
+                        <div class="product-remaining">
+                            <span class="fw-bold" id="remaining-@item.Id">@item.Qty</span> remaining
+                        </div>
+                    </td>
+                    <td class="align-middle text-center">
+                        <button type="button" 
+                                class="btn btn-outline-success" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#@modalId">
+                            <i class="fas fa-plus me-1"></i>Add Product
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Modal for item.ProductName -->
+                <div class="modal fade" id="@modalId" tabindex="-1" aria-labelledby="@($"label_{item.Id}")" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary-orange text-white">
+                                <h5 class="modal-title" id="@($"label_{item.Id}")">
+                                    <i class="fas fa-box me-2"></i>Add Item to Inventory
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="@formId" method="post" action="/Receipt/ProcessItem">
+                                    <input type="hidden" name="ItemId" value="@item.Id" />
+                                    <input type="hidden" name="ReceiptId" value="@Model.Id" />
+                                    
+                                    <div class="mb-3">
+                                        <label class="form-label">Product Name</label>
+                                        <input type="text" class="form-control" value="@item.ProductName" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">SKU</label>
+                                        <input type="text" class="form-control" value="@item.SKU" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Expected Quantity</label>
+                                        <input type="number" class="form-control" value="@item.Qty" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="@quantityInputId" class="form-label">
+                                            Quantity to Add <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="number" 
+                                               class="form-control" 
+                                               id="@quantityInputId"
+                                               name="ProcessedQuantity"
+                                               min="1" 
+                                               max="@item.Qty"
+                                               required 
+                                               placeholder="Enter quantity (max: @item.Qty)">
+                                        <div class="form-text">
+                                            Enter the actual quantity received. Maximum allowed: @item.Qty
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    <i class="fas fa-times me-1"></i>Cancel
+                                </button>
+                                <button type="submit" form="@formId" class="btn btn-success">
+                                    <i class="fas fa-plus me-1"></i>Add to Inventory
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </tbody>
+    </table>
+</div>

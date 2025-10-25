@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+namespace WMS_DEPI_GRAD.Controllers;
 
-namespace WMS_DEPI_GRAD.Controllers
+public class AccountController : Controller
 {
-    public class AccountController : Controller
+    public IActionResult Index()
     {
-        public IActionResult Login()
-        {
-            return View();
-        }
+        return View();
+    }
+
+    public IActionResult ForgotPassword()
+    {
+        return View();
     }
 }

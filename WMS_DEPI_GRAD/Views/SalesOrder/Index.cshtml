@@ -1,0 +1,38 @@
+﻿
+
+@model IEnumerable<SalesOrder>
+
+
+
+<h1 class="mt-4">Today's Sales Orders <span class="text-primary-orange" >@DateTime.Now.ToString("MM/dd/yyyy")</span></h1>
+<p class="mt-4">Total Sales Orders: @Model.Count()</p>
+
+<table class="table table-striped my-4">
+    <thead class="bg-dark text-secondary-orange">
+        <tr>
+            <th >#Sales Order ID</th>
+            <th >Customer Name</th>
+            <th >Order Date</th>
+            <th ></th>
+            
+        </tr>
+        </tr>
+       
+    </thead>
+    <tbody>
+    @foreach (var receipt in Model)
+    {
+        <tr>
+            <td>#@receipt.Id</td>
+            <td>@receipt.CustomerName</td>
+            <td>@receipt.OrderDate.ToString("MM/dd/yyyy")</td>
+            <td class="task-process text-end">
+                <a asp-action="GetSalesOrder" asp-route-id="@receipt.Id" class="p-1 border-radius-0 btn-hero-secondary">Order Details</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+
+
