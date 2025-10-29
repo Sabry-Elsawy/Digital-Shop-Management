@@ -1,0 +1,84 @@
+body {
+    background-color: #f6f9fc;
+    color: #17223b;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+.card {
+    border-radius: 0.6rem;
+    box-shadow: 0 6px 18px rgba(13, 20, 30, 0.06);
+    overflow: hidden;
+}
+
+h1.h3 {
+    letter-spacing: -0.3px;
+}
+
+.btn-primary {
+    background-image: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    box-shadow: 0 4px 10px rgba(37,99,235,0.12);
+}
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        filter: brightness(0.98);
+    }
+
+.table .font-monospace {
+    font-family: ui-monospace, Menlo, Monaco, "Courier New", monospace;
+    font-weight: 600;
+}
+
+.toast-custom {
+    min-width: 260px;
+    border-radius: 0.6rem;
+    box-shadow: 0 8px 20px rgba(13, 18, 30, 0.08);
+}
+
+.toast-success {
+    background: linear-gradient(90deg, rgba(34,197,94,0.08), rgba(34,197,94,0.03));
+    border-left: 4px solid #16a34a;
+}
+
+.toast-error {
+    background: linear-gradient(90deg, rgba(239,68,68,0.08), rgba(239,68,68,0.02));
+    border-left: 4px solid #ef4444;
+}
+
+.modal-content {
+    border-radius: 0.6rem;
+    box-shadow: 0 12px 35px rgba(10, 15, 30, 0.12);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.12);
+    border-color: #2563eb;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+.row-inserted {
+    animation: rowFadeIn 400ms ease-out;
+}
+
+@keyframes rowFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
