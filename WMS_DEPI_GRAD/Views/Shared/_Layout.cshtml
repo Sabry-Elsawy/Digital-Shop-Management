@@ -1,130 +1,137 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WMS</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WMS_DEPI_GRAD.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/inventory.css" />
-    <link rel="stylesheet" href="~/css/location.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - WMS</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/WMS_DEPI_GRAD.styles.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/inventory.css" />
+	<link rel="stylesheet" href="~/css/location.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 </head>
 <body>
 
-        
-            <nav class="side-nav col-auto px-0">
 
-                <div class="sidebar-header">
-                    <div class="logo-container">
-                        <i class="fas fa-cube nav-icon logo-icon"></i>
-                        <h5 class="sidebar-title">WMS</h5>
-                    </div>
-                </div>
-                <div class="sidebar-content">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Index">
-                                <i class="fas fa-home nav-icon"></i>
-                                <span class="nav-text">Home</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Account/Index">
-                                <i class="fas fa-sign-in-alt nav-icon"></i>
-                                <span class="nav-text">Login</span>
-                        </a>
+	<nav class="side-nav col-auto px-0">
 
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Inventory/Index">
-                                <i class="fas fa-boxes nav-icon"></i>
-                                <span class="nav-text">Inventory</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Receipt/Index">
-                                <i class="fas fa-arrow-circle-up nav-icon"></i>
-                                <span class="nav-text">Inbound</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/SalesOrder/Index">
-                                <i class="fas fa-truck-arrow-right nav-icon"></i>
-                                <span class="nav-text">Outbound</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Location/Index">
-                                <i class="fas fa-warehouse nav-icon"></i>
-                                <span class="nav-text">Location</span>
-                            </a>
-                        </li>
+		<div class="sidebar-header">
+			<div class="logo-container">
+				<i class="fas fa-cube nav-icon logo-icon"></i>
+				<h5 class="sidebar-title">WMS</h5>
+			</div>
+		</div>
+		<div class="sidebar-content">
+			<ul class="nav flex-column">
+				<li class="nav-item">
+					<a class="nav-link" href="/Home/Index">
+						<i class="fas fa-home nav-icon"></i>
+						<span class="nav-text">Home</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Account/Index">
+						<i class="fas fa-sign-in-alt nav-icon"></i>
+						<span class="nav-text">Login</span>
+					</a>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-chart-bar nav-icon"></i>
-                                <span class="nav-text">Reports</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-cog nav-icon"></i>
-                                <span class="nav-text">Settings</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Home/Privacy">
-                                <i class="fas fa-user-shield nav-icon"></i>
-                                <span class="nav-text">Privacy</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-user nav-icon"></i>
-                                <span class="nav-text">Profile</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-sign-out-alt nav-icon"></i>
-                                <span class="nav-text">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Inventory/Index">
+						<i class="fas fa-boxes nav-icon"></i>
+						<span class="nav-text">Inventory</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Receipt/Index">
+						<i class="fas fa-arrow-circle-up nav-icon"></i>
+						<span class="nav-text">Inbound</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/SalesOrder/Index">
+						<i class="fas fa-truck-arrow-right nav-icon"></i>
+						<span class="nav-text">Outbound</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Workers/Index">
+						<i class="fas fa-users nav-icon"></i>
+						<span class="nav-text">Workers</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Location/Index">
+						<i class="fas fa-warehouse nav-icon"></i>
+						<span class="nav-text">Location</span>
+					</a>
+				</li>
 
-
-
-
-        <main class="main-content col">
-            <div class="content-wrapper">
-               @RenderBody()
-            </div>
-        
-            
-            
-       
-        
-
-    <footer class="border-top footer">
-        <div class="mx-5">
-            &copy; 2025 - WMS_DEPI_GRAD
-        </div>
-    </footer>
-    </main>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="fas fa-chart-bar nav-icon"></i>
+						<span class="nav-text">Reports</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="fas fa-cog nav-icon"></i>
+						<span class="nav-text">Settings</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Home/Privacy">
+						<i class="fas fa-user-shield nav-icon"></i>
+						<span class="nav-text">Privacy</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="fas fa-user nav-icon"></i>
+						<span class="nav-text">Profile</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						<i class="fas fa-sign-out-alt nav-icon"></i>
+						<span class="nav-text">Logout</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
 
-    
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-    
+
+	<main class="main-content col">
+		<div class="content-wrapper">
+			@RenderBody()
+		</div>
+
+
+
+
+
+
+		<footer class="border-top footer">
+			<div class="mx-5">
+				&copy; 2025 - WMS_DEPI_GRAD
+			</div>
+		</footer>
+	</main>
+
+
+
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+
 
 </body>
 </html>
