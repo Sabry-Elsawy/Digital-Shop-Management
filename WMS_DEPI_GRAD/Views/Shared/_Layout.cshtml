@@ -6,6 +6,7 @@
 	<title>@ViewData["Title"] - WMS</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/SuperAdmin.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/WMS_DEPI_GRAD.styles.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/css/inventory.css" />
 	<link rel="stylesheet" href="~/css/location.css">
@@ -32,6 +33,38 @@
 						<span class="nav-text">Home</span>
 					</a>
 				</li>
+				<!--Start super admin-->
+				<li class="nav-item">
+					<a class="nav-link" href="/Dashboard/Index">
+						<i class="fa-solid fa-gauge nav-icon"></i>
+						<span class="nav-text">Dashboard</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Warehouses/Index">
+						<i class="fa-solid fa-building nav-icon"></i>
+						<span class="nav-text">Warehouses</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Users/Index">
+						<i class="fa-solid fa-users nav-icon"></i>
+						<span class="nav-text">Users</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/AuditLogs/Index">
+						<i class="fa-solid fa-book nav-icon"></i>
+						<span class="nav-text">Audit Logs</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Profile/Index">
+						<i class="fa-solid fa-user-circle nav-icon"></i>
+						<span class="nav-text">Profile</span>
+					</a>
+				</li>
+				<!--End super admin-->
 				<li class="nav-item">
 					<a class="nav-link" href="/Account/Index">
 						<i class="fas fa-sign-in-alt nav-icon"></i>

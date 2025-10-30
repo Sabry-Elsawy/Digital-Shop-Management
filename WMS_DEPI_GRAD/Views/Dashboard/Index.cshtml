@@ -1,0 +1,148 @@
+﻿<div class="page-content" id="dashboard">
+    <div class="page-header">
+        <h2>Dashboard</h2>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="kpi-card">
+                <div class="kpi-icon" style="background: rgba(249, 115, 22, 0.1)">
+                    <i class="fa-solid fa-warehouse" style="color: #f97316"></i>
+                </div>
+                <div class="kpi-content">
+                    <h6>Total Warehouses</h6>
+                    <h3>5</h3>
+                    <span class="kpi-trend positive">
+                        <i class="fa-solid fa-arrow-up"></i> 12% from last month
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="kpi-card">
+                <div class="kpi-icon" style="background: rgba(59, 130, 246, 0.1)">
+                    <i class="fa-solid fa-users" style="color: #3b82f6"></i>
+                </div>
+                <div class="kpi-content">
+                    <h6>Total Users</h6>
+                    <h3>23</h3>
+                    <span class="kpi-trend positive">
+                        <i class="fa-solid fa-arrow-up"></i> 8% from last month
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="kpi-card">
+                <div class="kpi-icon" style="background: rgba(34, 197, 94, 0.1)">
+                    <i class="fa-solid fa-arrow-down-left" style="color: #22c55e"></i>
+                </div>
+                <div class="kpi-content">
+                    <h6>Inbound Status</h6>
+                    <h3>87%</h3>
+                    <span class="kpi-trend positive">
+                        <i class="fa-solid fa-arrow-up"></i> 5% from last week
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="kpi-card">
+                <div class="kpi-icon" style="background: rgba(168, 85, 247, 0.1)">
+                    <i class="fa-solid fa-arrow-up-right" style="color: #a855f7"></i>
+                </div>
+                <div class="kpi-content">
+                    <h6>Outbound Status</h6>
+                    <h3>92%</h3>
+                    <span class="kpi-trend positive">
+                        <i class="fa-solid fa-arrow-up"></i> 3% from last week
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5><i class="fa-solid fa-chart-line"></i> Warehouse Performance</h5>
+        </div>
+        <div class="card-body">
+            <div class="chart-placeholder">
+                <span class="text-muted">Performance Chart Area</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activities -->
+    <div class="card">
+        <div class="card-header">
+            <h5><i class="fa-solid fa-clock-rotate-left"></i> Recent Activities</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th><i class="fa-solid fa-user"></i> User</th>
+                            <th><i class="fa-solid fa-bolt"></i> Action</th>
+                            <th><i class="fa-solid fa-box"></i> Resource</th>
+                            <th><i class="fa-regular fa-clock"></i> Time</th>
+                            <th><i class="fa-solid fa-flag"></i> Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Administrator</td>
+                            <td>User Created</td>
+                            <td>User Management</td>
+                            <td>09:30 AM</td>
+                            <td>
+                                <span class="badge bg-success"><i class="fa-solid fa-check"></i> Success</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Manager</td>
+                            <td>Warehouse Updated</td>
+                            <td>Warehouse MDC001</td>
+                            <td>09:15 AM</td>
+                            <td>
+                                <span class="badge bg-success"><i class="fa-solid fa-check"></i> Success</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mike Staff</td>
+                            <td>Login Failed</td>
+                            <td>Authentication</td>
+                            <td>08:45 AM</td>
+                            <td>
+                                <span class="badge bg-danger"><i class="fa-solid fa-xmark"></i> Failed</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lisa Supervisor</td>
+                            <td>Inventory Updated</td>
+                            <td>Warehouse WCH002</td>
+                            <td>08:30 AM</td>
+                            <td>
+                                <span class="badge bg-success"><i class="fa-solid fa-check"></i> Success</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,6 +5,7 @@
 html, body {
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal scroll */
+   
 }
 
 :root {
@@ -312,8 +313,7 @@ p {
         justify-content: center;
         max-width: 300px;
     }
-}
-
+} 
 
 /* Footer Styles - Moved to _Layout.cshtml.css for better specificity */
 

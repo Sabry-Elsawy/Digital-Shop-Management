@@ -1,0 +1,29 @@
+﻿<div class="page-content">
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <h2>User Details</h2>
+        <a asp-controller="UsersSA" asp-action="UpdateUser" class="btn btn-warning">
+            <i class="fa-solid fa-pen"></i> Edit User
+        </a>
+    </div>
+
+    <div class="card mt-4 shadow-sm border-0">
+        <div class="card-body">
+            <h4 class="text-orange">Model.FullName</h4>
+            <p><strong>Email:</strong> Model.Email</p>
+            <p><strong>Role:</strong> Model.Role</p>
+            <p>
+                <strong>Status:</strong>
+
+                <span class="badge bg-secondary">Inactive</span>
+            </p>
+            <p>
+                <strong>Last Login:</strong> Model.LastLogin?.ToString("yyyy-MM-dd hh:mm
+                tt")
+            </p>
+        </div>
+    </div>
+
+    <a asp-controller="Users" asp-action="Index" class="btn btn-secondary mt-3">
+        <i class="fa-solid fa-arrow-left"></i> Back to Users
+    </a>
+</div>

@@ -1,0 +1,144 @@
+﻿<div class="page-content" id="users">
+    <div class="page-header d-flex justify-content-between align-items-center">
+        <h2>User Management</h2>
+        <button class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#userModal">
+            <i class="fa-solid fa-circle-plus"></i> Add User
+        </button>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <!-- Filters -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Search users..." />
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>All Roles</option>
+                        <option>Super Admin</option>
+                        <option>Warehouse Manager</option>
+                        <option>Supervisor</option>
+                        <option>Staff</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>All Status</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Last Login</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>John Administrator</strong></td>
+                            <td>john.admin@wms.com</td>
+                            <td><span class="badge bg-danger">Super Admin</span></td>
+                            <td><span class="badge bg-success">Active</span></td>
+                            <td>2025-10-25 08:30 AM</td>
+                            <td>
+                                <!-- View -->
+                                <a asp-controller="Users"
+                                   asp-action="UserDetails"
+                                   class="btn btn-sm btn-outline-primary"
+                                   title="View User">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+
+                                <!-- Edit -->
+                                <a asp-controller="Users"
+                                   asp-action="UpdateUser"
+                                   class="btn btn-sm btn-outline-warning"
+                                   title="Edit User">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+
+                                <!-- Delete -->
+                                <button class="btn btn-sm btn-outline-danger"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteUser1"
+                                        title="Delete User">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- باقي الصفوف زي ما هي -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- User Modal -->
+<div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New User</h5>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter full name" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email"
+                               class="form-control"
+                               placeholder="Enter email address" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Role</label>
+                        <select class="form-select">
+                            <option>Select role</option>
+                            <option>Super Admin</option>
+                            <option>Warehouse Manager</option>
+                            <option>Supervisor</option>
+                            <option>Staff</option>
+                            <option>Data Analyst</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Status</label>
+                        <select class="form-select">
+                            <option>Active</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-primary">Add User</button>
+            </div>
+        </div>
+    </div>
+</div>
